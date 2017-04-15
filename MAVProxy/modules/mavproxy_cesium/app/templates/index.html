@@ -17,6 +17,15 @@
     <title>MAVCesium</title>
     
     <script src="/static/Build/Cesium/Cesium.js"></script>
+
+    <script type="text/javascript" src="/static/DST/js/third_party/angular.min.js"></script>
+    <script type="text/javascript" src="/static/DST/js/third_party/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/static/DST/js/third_party/angular-route.min.js"></script>
+    <script type="text/javascript" src="/static/DST/js/third_party/ngDraggable.js"></script>
+    <script type="text/javascript" src="/static/DST/js/third_party/sortable.js"></script>
+
+    <script src ="/static/DST/js/meters.js"></script>
+
     <script>
         var bing_api_key = '{{ bing_api_key }}';
     </script>
@@ -26,19 +35,27 @@
     
   </head>
 
-  <body>
+  <body ng-app="includeExample">
     <!-- Fixed navbar -->
+    <h2>THis is new variable //bags//</h2>
+    <div ng-controller="ExampleController">
+        <br>
+        <h2>THis is new variable |[ bags ]|</h2>
+    </div>
+
+
     <nav class="navbar navbar-default navbar-fixed-top">
 	    <div class="nav navbar-nav navbar-left">
 	        <p class = "navbar-text" id = 'cursor_location'></p>
 	        <p class = "navbar-text" id = 'cursor_click'></p>
 	    </div>
-        <div class="nav navbar-nav navbar-right">
+        <div class="nav navbar-nav navbar-right" ng-controller="Tester">
 	        <ul class="nav navbar-nav">
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Camera<span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li onclick="toggle_free_view(this, free_view)" id="free"><a href="#">Free</a></li>
+		            <li onclick="toggle_free_view(this, free_view)" id="free"><a href="#">Free View  |[ mixing ]|</a></li>
+                    <!-- <li onclick="toggle_free_view(this, free_view)" id="free"><a href="#">Free</a></li> -->
 		            <li onclick="toggle_god_view(this, god_view)" id="god"><a href="#">Top Down</a></li>
 		            <li onclick="toggle_fpv_view(this, fpv_view)" id="fpv"><a href="#">Synthetic</a></li>
 		          </ul>

@@ -104,4 +104,5 @@ body .cesium-viewer .cesium-widget-credits {
     position: absolute;
     display: block;
     pointer-events:none;
+    z-index: -1;
 }
