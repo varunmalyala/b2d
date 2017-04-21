@@ -99,6 +99,7 @@ $(function () {
         	}
         };
     }
+
     function draw_fence() {
     		viewer.entities.remove(viewer.entities.getById('fence_wall'))
     	if (fence.points.length > 9) {
@@ -659,3 +660,4 @@ document.onkeypress = function(evt) {
     	//do nothing
     }
 };
+

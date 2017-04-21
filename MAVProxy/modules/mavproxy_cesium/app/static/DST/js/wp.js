@@ -34,7 +34,7 @@ function create_wp(id, wp_data){
             positions : Cesium.Cartesian3.fromDegreesArrayHeights( [wp_data.y, wp_data.x, wp_data.z+height_offset,   wp_data.y, wp_data.x, 0]  ),
             width : 1,
             material : Cesium.Material.fromType('Color', {
-                color : Cesium.Color.BLACK
+                color : Cesium.Color.RED
                 }) //DODGERBLUE
         });
         

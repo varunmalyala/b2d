@@ -104,4 +104,14 @@ body .cesium-viewer .cesium-widget-credits {
     position: absolute;
     display: block;
     pointer-events:none;
+/*    z-index: -1;*/
+}
+
+#hudx
+{
+  top:100px;
+  left:100px;
+  z-index:2;
+  position: absolute;
+  color: #ffffff;
 }

@@ -4,6 +4,8 @@ var FPS = 30
 var canvas_width = window.innerWidth
 var canvas_height = window.innerHeight
 var hud_half_width = false
+var xxs = {}
+var xxs1 = 0
 
 canvas_element.width  = window.innerWidth
 canvas_element.height = window.innerHeight
@@ -13,11 +15,11 @@ if (canvas_element.getContext){
 	window.addEventListener('resize', resize_hud, false);
 	setInterval(function() {
 		draw_hud();
+//		console.log(xxs)
 	}, 1000/FPS);
 } else {
 	console.log('ERROR: Canvas element not supported by browser. Unable to draw HUD')
 }
-
 
 function resize_hud() {
 	canvas_element.height = window.innerHeight
@@ -39,9 +41,17 @@ function draw_hud() {
 			pitch_ladder.draw()
 			roll_guage.draw()
 			compass.draw()
+			
+			xxs = this.window.data_stream;
+	//		console.log(xxs)
+			xxs1  = xxs.VFR_HUD.heading;
+
+//		console.log(xxs.VFR_HUD.groundspeed)
 		}
 		status_text.draw()
 		text_guage.draw()
+		
+
 	}
 }
 
@@ -350,19 +360,23 @@ var text_guage = {
 	    	canvas.fillText(flightmode, 15, top_offset);
 	    	canvas.fillStyle = this.color // restore the fill style
 	    }
-	    
+
 	    if (data_stream.VFR_HUD) {
-		    canvas.font="30px Arial";
-		    canvas.fillText('AS: '+(data_stream.VFR_HUD.airspeed).toFixed(1)+' m/s', 15, top_offset+50);
-		    canvas.font="20px Arial";
-		    canvas.fillText('GS: '+(data_stream.VFR_HUD.groundspeed).toFixed(1)+' m/s', 15, top_offset+80);
-		    canvas.font="30px Arial";
-		    canvas.fillText('Alt: '+(data_stream.VFR_HUD.alt).toFixed(1)+' m', 15, top_offset+175);
-		    canvas.font="20px Arial";
-		    canvas.fillText('dAlt: '+(data_stream.VFR_HUD.climb).toFixed(1)+' m/s', 15, top_offset+205);
-		    canvas.font="30px Arial";
-		    canvas.fillText('Thr: '+(data_stream.VFR_HUD.throttle).toFixed(0)+' %', 15, top_offset+300);
+	    canvas.font="30px Arial";
+	    canvas.fillText('Thr: '+(data_stream.VFR_HUD.throttle).toFixed(0)+' %', 15, top_offset+300);
 	    }
+	    // if (data_stream.VFR_HUD) {
+		   //  canvas.font="30px Arial";
+		   //  canvas.fillText('AS: '+(data_stream.VFR_HUD.airspeed).toFixed(1)+' m/s', 15, top_offset+50);
+		   //  canvas.font="20px Arial";
+		   //  canvas.fillText('GS: '+(data_stream.VFR_HUD.groundspeed).toFixed(1)+' m/s', 15, top_offset+80);
+		   //  canvas.font="30px Arial";
+		   //  canvas.fillText('Alt: '+(data_stream.VFR_HUD.alt).toFixed(1)+' m', 15, top_offset+175);
+		   //  canvas.font="20px Arial";
+		   //  canvas.fillText('dAlt: '+(data_stream.VFR_HUD.climb).toFixed(1)+' m/s', 15, top_offset+205);
+		   //  canvas.font="30px Arial";
+		   //  canvas.fillText('Thr: '+(data_stream.VFR_HUD.throttle).toFixed(0)+' %', 15, top_offset+300);
+	    // }
 	    
 	    if (data_stream.MISSION_CURRENT && data_stream.NAV_CONTROLLER_OUTPUT) {
 	    	canvas.fillText('WP: '+(data_stream.MISSION_CURRENT.seq)+' < '+data_stream.NAV_CONTROLLER_OUTPUT.wp_dist+' m', 15, top_offset+350);
