@@ -13,9 +13,20 @@ canvas_element.height = window.innerHeight
 if (canvas_element.getContext){
 	canvas = canvas_element.getContext('2d');
 	window.addEventListener('resize', resize_hud, false);
+	// Setinterval draws the HUD for the specified time
 	setInterval(function() {
 		draw_hud();
-//		console.log(xxs)
+
+		// Scribbling Code 
+		//JSON.stringify()
+	//	xxs = this.window.data_stream;
+	//	console.log(JSON.stringify(xxs))
+
+	//	console.log(xxs.VFR_HUD)
+		//xxs1  = xxs.VFR_HUD.heading;
+		// End of Scribbling 
+
+
 	}, 1000/FPS);
 } else {
 	console.log('ERROR: Canvas element not supported by browser. Unable to draw HUD')
@@ -42,9 +53,7 @@ function draw_hud() {
 			roll_guage.draw()
 			compass.draw()
 			
-			xxs = this.window.data_stream;
-	//		console.log(xxs)
-			xxs1  = xxs.VFR_HUD.heading;
+
 
 //		console.log(xxs.VFR_HUD.groundspeed)
 		}
@@ -357,13 +366,13 @@ var text_guage = {
 	    		// do nothing...
 	    	}
 	    	
-	    	canvas.fillText(flightmode, 15, top_offset);
-	    	canvas.fillStyle = this.color // restore the fill style
+	    //	canvas.fillText(flightmode, 15, top_offset);
+	    //	canvas.fillStyle = this.color // restore the fill style
 	    }
 
 	    if (data_stream.VFR_HUD) {
-	    canvas.font="30px Arial";
-	    canvas.fillText('Thr: '+(data_stream.VFR_HUD.throttle).toFixed(0)+' %', 15, top_offset+300);
+	    //canvas.font="30px Arial";
+	    //canvas.fillText('Thr: '+(data_stream.VFR_HUD.throttle).toFixed(0)+' %', 15, top_offset+300);
 	    }
 	    // if (data_stream.VFR_HUD) {
 		   //  canvas.font="30px Arial";
@@ -379,7 +388,7 @@ var text_guage = {
 	    // }
 	    
 	    if (data_stream.MISSION_CURRENT && data_stream.NAV_CONTROLLER_OUTPUT) {
-	    	canvas.fillText('WP: '+(data_stream.MISSION_CURRENT.seq)+' < '+data_stream.NAV_CONTROLLER_OUTPUT.wp_dist+' m', 15, top_offset+350);
+	    //	canvas.fillText('WP: '+(data_stream.MISSION_CURRENT.seq)+' < '+data_stream.NAV_CONTROLLER_OUTPUT.wp_dist+' m', 15, top_offset+350);
 	    }
 	    canvas.restore() 
 	}
@@ -413,7 +422,7 @@ var status_text = {
 			    	offset = 15
 			    }
 			    canvas.font="20px Arial";
-				canvas.fillText(data_stream.STATUSTEXT.text, offset, top_offset); // display to the right of the current mode
+			//	canvas.fillText(data_stream.STATUSTEXT.text, offset, top_offset); // display to the right of the current mode
 			}
 		}
 	}

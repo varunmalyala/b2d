@@ -14,22 +14,9 @@
     <link rel="stylesheet" href="/static/DST/css/third_party/lobipanel.css"/>
     <link rel="icon" href="/static/DST/favicon-32x32.png" sizes="32x32" />
 
-    <script type="text/javascript" src="/static/DST/js/third_party/angular.min.js"></script>
-    <script type="text/javascript" src="/static/DST/js/third_party/angular-resource.min.js"></script>
-    <script type="text/javascript" src="/static/DST/js/third_party/angular-route.min.js"></script>
-    <script type="text/javascript" src="/static/DST/js/third_party/ngDraggable.js"></script>
-    <script type="text/javascript" src="/static/DST/js/third_party/sortable.js"></script>
-
     <title>MAVCesium</title>
     
     <script src="/static/Build/Cesium/Cesium.js"></script>
-
-{# Angular Classes are defined here #} 
-    <script src="/static/DST/js/base_ang.js"></script>
-
-{#  #}
-
-
 
     <script>
         var bing_api_key = '{{ bing_api_key }}';
@@ -40,28 +27,28 @@
     
   </head>
 
-  <body ng-app="BubX">
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-	    <div class="nav navbar-nav navbar-left">
-	        <p class = "navbar-text" id = 'cursor_location'></p>
-	        <p class = "navbar-text" id = 'cursor_click'></p>
-	    </div>
+  <body>
+<!--     <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="nav navbar-nav navbar-left">
+            <p class = "navbar-text" id = 'cursor_location'></p>
+            <p class = "navbar-text" id = 'cursor_click'></p>
+        </div>
         <div class="nav navbar-nav navbar-right">
-	        <ul class="nav navbar-nav">
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Camera<span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li onclick="toggle_free_view(this, free_view)" id="free"><a href="#">Free</a></li>
-		            <li onclick="toggle_god_view(this, god_view)" id="god"><a href="#">Top Down</a></li>
-		            <li onclick="toggle_fpv_view(this, fpv_view)" id="fpv"><a href="#">Synthetic</a></li>
-		          </ul>
-		        </li>
-		        <li class='active' onclick="toggle_track_vehicle(this, track_vehicle)" id="track_vehicle"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Track Vehicle"><i class="fa fa-crosshairs fa-lg" aria-hidden="true"></i></a></li>
-	            <li data-toggle="modal" data-target=".bd-example-modal-lg"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Settings"><i class="fa fa-cogs fa-lg" aria-hidden="true"></i></a></li>
-	         </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Camera<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li onclick="toggle_free_view(this, free_view)" id="free"><a href="#">Free </a></li>
+                    <li onclick="toggle_free_view(this, free_view)" id="free"><a href="#">Free</a></li>
+                    <li onclick="toggle_god_view(this, god_view)" id="god"><a href="#">Top Down</a></li>
+                    <li onclick="toggle_fpv_view(this, fpv_view)" id="fpv"><a href="#">Synthetic</a></li>
+                  </ul>
+                </li>
+                <li class='active' onclick="toggle_track_vehicle(this, track_vehicle)" id="track_vehicle"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Track Vehicle"><i class="fa fa-crosshairs fa-lg" aria-hidden="true"></i></a></li>
+                <li data-toggle="modal" data-target=".bd-example-modal-lg"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Settings"><i class="fa fa-cogs fa-lg" aria-hidden="true"></i></a></li>
+             </ul>
          </div>
-    </nav>
+    </nav> -->
 
     <!-- Begin page content -->
 
@@ -73,32 +60,18 @@
     
     <canvas id="hud"></canvas>
     
-
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/static/DST/js/third_party/jquery-2.2.4.min.js"></script>
     <script src="/static/DST/js/third_party/bootstrap.min.js"></script>
     <script src="/static/DST/js/third_party/jquery-ui.min.js"></script>
     <script src="/static/DST/js/third_party/lobipanel.js"></script>
-	<script src="/static/DST/js/cesium_setup.js"></script>
+    <script src="/static/DST/js/cesium_setup.js"></script>
     <script src="/static/DST/js/core.js"></script>
-	<script src="/static/DST/js/websocket.js"></script>
-
-
-    
-	<script src="/static/DST/js/wp.js"></script>
-	<script src="/static/DST/js/context_menu.js"></script>
-	<script src="/static/DST/js/settings.js"></script>
-	<script src="/static/DST/js/hud.js"></script>
-
-    <script src="/static/DST/js/add_fun.js"></script>	
-
-    <div id="hudx" ng-controller="Tester">
-    <div ng-controller="HUD">
-        <h3> This is a new |[ bags ]| and |[ aird ]|</h3>
-    </div>
-    </div>
-
-
+    <script src="/static/DST/js/wp.js"></script>
+    <script src="/static/DST/js/context_menu.js"></script>
+    <script src="/static/DST/js/settings.js"></script>
+    <script src="/static/DST/js/hud.js"></script>
+    <script src="/static/DST/js/websocket.js"></script>
 
     </body>
 </html>

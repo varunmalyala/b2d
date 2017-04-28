@@ -6,6 +6,12 @@
 		},
 		{
 			"path": "MAVProxy/modules/mavproxy_cesium"
+		},
+		{
+			"path": "/home/varun/PX2/Envs/material-start"
+		},
+		{
+			"path": "/home/varun/PX2/Basic Testing/Test4"
 		}
 	]
 }

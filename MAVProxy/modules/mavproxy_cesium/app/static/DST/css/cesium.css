@@ -92,10 +92,12 @@ body .cesium-viewer .cesium-widget-credits {
   font-size: 8px;
   text-shadow: none;
   line-height: 10px;
+  opacity: 0;
 }
 
+
 .cesium-credit-image img {
-    width: 50px;
+    width: 0px;
 }
 
 #hud {

@@ -13,7 +13,7 @@ angular.module('BubX').controller('HUD', ['$scope','$window', function($scope,$w
   
    // $scope.dta = $window.vehicle_offset_x;
   var work = {};
-  $scope.work = $window.xxs;
+  //$scope.work = JSON.Stringify($window.data_stream.VFR_HUD.throttle);
   //console.log(work);
   console.log($window.xxs1)
   //console.log($window.xxs.VFR_HUD.throttle)
