@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>Basefile</title>
+        {% include "requirements.html" %}
 </head>
 <body>
 
-<div id="frame_cesium">
+<div ng-cloak id="frame_cesium">
     <iframe src="http://127.0.0.1:5000/cesium/" height="480" width="320"></iframe>
 </div>
 
