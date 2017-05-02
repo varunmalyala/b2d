@@ -46,8 +46,8 @@ $(function () {
     		init_flag: false,
     		alt: 150}
     
-    var fpv_view = {value: true}
-    var free_view = {value: false}
+    var fpv_view = {value: false}
+    var free_view = {value: true}
     
     var views = [god_view, fpv_view, free_view]
     var hud = {show:true}
