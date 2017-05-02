@@ -46,8 +46,8 @@ $(function () {
     		init_flag: false,
     		alt: 150}
     
-    var fpv_view = {value: false}
-    var free_view = {value: true}
+    var fpv_view = {value: true}
+    var free_view = {value: false}
     
     var views = [god_view, fpv_view, free_view]
     var hud = {show:true}
@@ -394,7 +394,7 @@ $(function () {
     
     function clear_selected_marker(){
     	if (selected.marker != null){
-            document.getElementsByTagName("body")[0].style.cursor = "default"
+            // document.getElementsByTagName("body")[0].style.cursor = "default"
             selected.marker.image = '/static/DST/wp_icons/blu-blank.png' // re-set the wp icon to be unselected...
             selected.marker = null
             selected.alt_line = null
@@ -426,7 +426,7 @@ $(function () {
 	        var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(6);
 	        var heightString = cartographic.height.toFixed(1)
 	        // console.log(longitudeString, latitudeString, heightString)
-	        document.getElementById('cursor_location').innerHTML = 'Cursor Position: '+latitudeString+' '+longitudeString+' '+heightString+'m';
+	        // document.getElementById('cursor_location').innerHTML = 'Cursor Position: '+latitudeString+' '+longitudeString+' '+heightString+'m';
 	    }
     	
 	        
@@ -448,7 +448,7 @@ $(function () {
     	
     	if (selected.marker != null && selected.dragging) {
     		selected.marker.image= '/static/DST/wp_icons/ylw-blank.png' // make / keep the marker yellow
-    		document.getElementsByTagName("body")[0].style.cursor = "url(/static/DST/pointers/move.png), pointer"
+    		// document.getElementsByTagName("body")[0].style.cursor = "url(/static/DST/pointers/move.png), pointer"
     		
     		if (!selected.camera_stored){
     			  store_camera() // store the current camera until after release
@@ -514,7 +514,7 @@ $(function () {
         	
         	if (selected.marker != null && !selected.dragging){ // this is the only point where we select the wp
         		// we dont select if we are dragging otherwise we can move wp's accidentally when panning the camera...
-        		document.getElementsByTagName("body")[0].style.cursor = "pointer" // change the pointer to a hand
+        		// document.getElementsByTagName("body")[0].style.cursor = "pointer" // change the pointer to a hand
         		selected.marker.image= '/static/DST/wp_icons/ylw-blank.png'
         		selected.alt_line = get_by_id(alt_lines, selected.marker.id) // 
         	} else { // we have not picked a wp
@@ -553,10 +553,10 @@ $(function () {
 	        var heightString = ray_cartographic.height.toFixed(1)
 	        
 	        //update the UI click text
-	        document.getElementById('cursor_click').innerHTML = 'Click: '+latitudeString+' '+longitudeString+' '+heightString+'m';
+	        // document.getElementById('cursor_click').innerHTML = 'Click: '+latitudeString+' '+longitudeString+' '+heightString+'m';
 	        if (last_click) {
 	        	var geo_sep = new Cesium.EllipsoidGeodesic(last_click, ray_cartographic)
-	        	document.getElementById('cursor_click').innerHTML += ' Distance: '+geo_sep.surfaceDistance.toFixed(1)+'m Bearing: '+ Cesium.Math.toDegrees(Cesium.Math.zeroToTwoPi(geo_sep.startHeading)).toFixed(1);
+	        	// document.getElementById('cursor_click').innerHTML += ' Distance: '+geo_sep.surfaceDistance.toFixed(1)+'m Bearing: '+ Cesium.Math.toDegrees(Cesium.Math.zeroToTwoPi(geo_sep.startHeading)).toFixed(1);
 	        }
 	        last_click = ray_cartographic
     	}

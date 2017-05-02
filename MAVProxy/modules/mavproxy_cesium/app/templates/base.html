@@ -2,11 +2,20 @@
 <html>
 <head>
     <title>Basefile</title>
+    {% include "requirements.html" %}
 </head>
-<body>
+<body ng-app="BubX">
 
 <div id="frame_cesium">
     <iframe src="http://127.0.0.1:5000/cesium/" height="480" width="320"></iframe>
+</div>
+    
+<script src="/static/DST/js/add_fun.js"></script>
+
+<div id="hudx" ng-controller="Tester">
+    <div ng-controller="HUD" >
+        <h3> This is a new |[ bags ]| and |[  ]|</h3>
+    </div>
 </div>
 
 </body>

@@ -31,7 +31,7 @@ with open(os.path.join(APP_ROOT, 'api_keys.txt', )) as fid:
 
 @app.route('/')
 def index():
-     return render_template('base.html', bing_api_key=api_keys['bing'])
+     return render_template('base.html')
     # Base.html is the new home file. Index is referenced to HUD and all the cesium content
     # return render_template('base.html', bing_api_key=api_keys['bing'])
 
